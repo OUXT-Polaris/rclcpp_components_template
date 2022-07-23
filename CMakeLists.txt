@@ -23,6 +23,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# Create the component target
 ament_auto_add_library(${PROJECT_NAME}-${COMP_NAME_LOWER}_component SHARED
     src/${COMP_NAME_LOWER}_component.cpp
 )
@@ -30,13 +31,15 @@ target_compile_definitions(${PROJECT_NAME}-${COMP_NAME_LOWER}_component
   PRIVATE ${PROJECT_NAME}_BUILDING_DLL)
 rclcpp_components_register_nodes(${PROJECT_NAME}-${COMP_NAME_LOWER}_component
  "${PROJECT_NAME}::${COMP_NAME}Component")
+# ---------------------------
 
-
+# Create the executor target
 ament_auto_add_executable(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
     NO_TARGET_LINK_LIBRARIES
     src/${COMP_NAME_LOWER}_node.cpp
 )
 target_link_libraries(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
  ${PROJECT_NAME}-${COMP_NAME_LOWER}_component)
+# --------------------------
 
 ament_auto_package()
