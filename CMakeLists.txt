@@ -33,6 +33,7 @@ rclcpp_components_register_nodes(${PROJECT_NAME}-${COMP_NAME_LOWER}_component
 
 
 ament_auto_add_executable(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
+    NO_TARGET_LINK_LIBRARIES
     src/${COMP_NAME_LOWER}_node.cpp
 )
 target_link_libraries(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
