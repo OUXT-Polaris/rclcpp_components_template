@@ -27,6 +27,6 @@ ExampleComponent::ExampleComponent(const rclcpp::NodeOptions & options)
 {
   //TODO:
 }
-}
+}  // namespace pkgname
 
 RCLCPP_COMPONENTS_REGISTER_NODE(pkgname::ExampleComponent)
