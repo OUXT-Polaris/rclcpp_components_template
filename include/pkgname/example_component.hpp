@@ -20,8 +20,8 @@
 #include <rclcpp/rclcpp.hpp>
 
 // Headers needed in pub/sub, exposed types
-#include <memory> // shared_ptr in pub_
-#include <perception_msgs/msg/tracking2_d.hpp> // Tracking2D in pub_
+#include <memory>  // shared_ptr in pub_
+//#include <perception_msgs/msg/tracking2_d.hpp> // Tracking2D in pub_
 
 namespace pkgname
 {
@@ -32,6 +32,7 @@ public:
   explicit ExampleComponent(const rclcpp::NodeOptions & options);
 
 private:
-  std::shared_ptr<rclcpp::Publisher<perception_msgs::msg::Tracking2D>> pub_;
+  //  std::shared_ptr<rclcpp::Publisher<perception_msgs::msg::Tracking2D>> pub_;
+  //  std::shared_ptr<rclcpp::Subscription<perception_msgs::msg::Tracking2D>> sub_;
 };
-}
+}  // namespace pkgname

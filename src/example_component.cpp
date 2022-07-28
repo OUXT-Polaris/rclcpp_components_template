@@ -1,4 +1,4 @@
-// Copyright (c) 2020 OUXT Polaris
+// Copyright (c) 2022 OUXT Polaris
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,6 +27,6 @@ ExampleComponent::ExampleComponent(const rclcpp::NodeOptions & options)
 {
   //TODO:
 }
-}
+}  // namespace pkgname
 
 RCLCPP_COMPONENTS_REGISTER_NODE(pkgname::ExampleComponent)
