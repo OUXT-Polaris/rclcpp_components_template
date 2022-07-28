@@ -9,7 +9,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
-find_package (ament_cmake_auto REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
 if(BUILD_TESTING)
@@ -28,10 +28,9 @@ ament_auto_add_library(${PROJECT_NAME}-${COMP_NAME_LOWER}_component SHARED
     src/${COMP_NAME_LOWER}_component.cpp
 )
 target_compile_definitions(${PROJECT_NAME}-${COMP_NAME_LOWER}_component
-  PRIVATE ${PROJECT_NAME}_BUILDING_DLL)
+    PRIVATE ${PROJECT_NAME}_BUILDING_DLL)
 rclcpp_components_register_nodes(${PROJECT_NAME}-${COMP_NAME_LOWER}_component
- "${PROJECT_NAME}::${COMP_NAME}Component")
-# ---------------------------
+    "${PROJECT_NAME}::${COMP_NAME}Component")
 
 # Create the executor target
 ament_auto_add_executable(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
@@ -39,7 +38,7 @@ ament_auto_add_executable(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
     src/${COMP_NAME_LOWER}_node.cpp
 )
 target_link_libraries(${PROJECT_NAME}-${COMP_NAME_LOWER}_node
- ${PROJECT_NAME}-${COMP_NAME_LOWER}_component)
-# --------------------------
+    ${PROJECT_NAME}-${COMP_NAME_LOWER}_component)
 
 ament_auto_package()
+
